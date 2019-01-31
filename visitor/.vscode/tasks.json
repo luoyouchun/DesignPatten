@@ -8,7 +8,7 @@
             "command": "clang++",
             "type": "shell",
             "args": [
-                "main.cpp",
+                "set.cpp",
                 "-std=c++17",
                 "-g"
             ],
