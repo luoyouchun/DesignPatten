@@ -2,7 +2,7 @@
 #include "message.h"
 #include "factory1.h"
 #include "factory2.h"
-#include "factory3.h"
+#include "AbstractFactory.h"
 #include "factory4.h"
 #include "factory5.h"
 #include "factory6.h"
@@ -72,10 +72,11 @@ struct messageC : public message_base {
 
 	int a_;
 };
-REGISTER_MESSAGE1(messageC, "msgC", int);
+
+REGISTER_FACTORY(messageC, "msgC", int);
 
 void test_factory_with_args() {
-	auto msgc = factory3<messageC, int>::get().produce("msgC", 2);
+	auto msgc = AbstractFactory<messageC, int>::get().produce("msgC", 2);
 	msgc->foo();
 }
 
